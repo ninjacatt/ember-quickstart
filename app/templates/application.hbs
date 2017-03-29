@@ -1,4 +1,21 @@
-<h1>PeopleTracker</h1>
-{{outlet}}
-
-
+<div class="container">
+  <div class="menu">
+    {{#link-to 'index'}}
+      <h1>
+        <em>List Everything</em>
+      </h1>
+    {{/link-to}}
+    <div class="links">
+      {{#link-to 'about'}}
+        About
+      {{/link-to}}
+      
+      {{#link-to 'listings'}}
+        Listings
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

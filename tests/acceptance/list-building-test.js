@@ -3,28 +3,38 @@ import moduleForAcceptance from 'ember-quickstart/tests/helpers/module-for-accep
 
 moduleForAcceptance('Acceptance | list building');
 
-test('visiting /', function(assert) {
+test('should show listings as the home page', function (assert) {
   visit('/');
-
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/listings', 'should redirect automatically');
   });
 });
 
-test('should show rentals as the home page', function (assert) {
-});
-
 test('should link to information about the company.', function (assert) {
+  visit('/');
+  click('a:contains("About")'); // jQuery selector
+  andThen(function() {
+    assert.equal(currentURL(), '/about', 'should go to about page');
+  });
 });
 
-test('should link to contact information.', function (assert) {
+test('should link to listing information.', function (assert) {
+  visit('/');
+  click('a:contains("Listings")')
+  andThen(function() {
+    assert.equal(currentURL(), '/listings', 'should go to about page');
+  });
 });
 
 test('should list available rentals.', function (assert) {
+  visit('/');
+  andThen(function() {
+    assert.equal(find('.listing').length, 3, 'should see 3 listings');
+  });
 });
 
-test('should filter the list of rentals by city.', function (assert) {
+test('should filter the list of rentals by city.', function () {
 });
 
-test('should show details for a selected rental', function (assert) {
+test('should show details for a selected rental', function () {
 });
