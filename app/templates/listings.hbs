@@ -3,18 +3,8 @@
   <h2>Welcome to listing!</h2>
   <p>We hope you find exactly what you're looking for.</p>
 </div>
+{{input type="text" value=search placeholder="search" class="search"}}
+
 {{#each model as |listingItem|}}
-  <article class = "listing">
-    <h3>{{listingItem.title}}</h3>
-    <img src={{listingItem.image}} width="128" height="128"/>
-    <div class="detail owner">
-      <span>Owner:</span> {{listingItem.owner}}
-    </div>
-    <div class="detail type">
-      <span>Type:</span> {{listingItem.type}}
-    </div>
-    <div class="detail location">
-      <span>Location:</span> {{listingItem.city}}
-    </div>
-  </article>
+  {{item-listing listingItem = listingItem}}
 {{/each}}
