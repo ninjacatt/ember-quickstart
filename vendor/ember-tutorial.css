@@ -172,6 +172,10 @@ p {
 .body {
     padding: 15px;
 }
+
+.input {
+    padding: 15px;
+}
 /**
  * Similar to Jumbotron
  */
